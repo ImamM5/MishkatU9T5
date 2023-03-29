@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // DO NOW: Here are some objects
@@ -27,27 +28,53 @@ public class Main {
         // then add the four objects from the Do Now (animal, cow, dog, puppy)
         // to the ArrayList, in any order, using the "add" ArrayList method.
 
+        ArrayList<Animal> aList = new ArrayList<Animal>();
+        aList.add(animal);
+        aList.add(dog);
+        aList.add(cow);
+        aList.add(puppy);
+
 
 
         // Exercise 2: use an ENHANCED for loop to loop through the
         // arraylist and call the talk() method on each object.
 
+        for (Animal animals : aList)
+        {
+            animals.talk();
+        }
 
 
         // Exercise 3: use a standard INDEX-BASED for loop to again
         // call the talk() method on each object.
 
+        for (int i=0; i< aList.size(); i++)
+        {
+            aList.get(i).talk();
+        }
 
 
         // Exercise 4: same as Exercise 1, except use an array of type Animal.
 
-
+        Animal[] arrAnimal = {animal, dog, cow, puppy};
 
 
         // Exercise 5: modify either of the loops from 2 or 3 above to attempt
         // to call the fetch() method on each object instead of talk().
         // does the code compile when you do this?  if not, why not?
         // can you figure out a way to get it to compile and run?
+
+        for (Animal animals : aList)
+        {
+            if (animals instanceof Dog)
+            {
+                Dog temp = (Dog)animals;
+                ((Dog) animals).fetch();
+            }
+        }
+
+
+
 
 
     }
